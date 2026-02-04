@@ -5,10 +5,11 @@ import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 import { Navbar } from '@/components/navbar'
 import { Footer } from '@/components/footer'
+import { WhatsAppButton } from '@/components/whatsapp-button'
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
-const poppins = Poppins({ 
-  subsets: ["latin"], 
+const poppins = Poppins({
+  subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   variable: "--font-poppins"
 })
@@ -27,7 +28,7 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_IN',
   },
-    generator: 'v0.app'
+  generator: 'v0.app'
 }
 
 export const viewport: Viewport = {
@@ -47,6 +48,7 @@ export default function RootLayout({
         <Navbar />
         <main>{children}</main>
         <Footer />
+        <WhatsAppButton />
         <Analytics />
       </body>
     </html>

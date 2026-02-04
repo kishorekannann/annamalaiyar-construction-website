@@ -70,21 +70,38 @@ export function ContactForm() {
     setIsSubmitting(true)
 
     try {
-      const response = await fetch("/api/contact", {
+      // Using Web3Forms API - Free email service
+      const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          Accept: "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          access_key: "9123eb43-2131-4a67-bbf2-8956e4f8f647", // Get free key from https://web3forms.com
+          subject: `New Contact Form Submission from ${formData.name}`,
+          from_name: "Annamalaiyar Construction Website",
+          to: "23cs090@kpriet.ac.in",
+          name: formData.name,
+          phone: formData.phone,
+          email: formData.email,
+          message: formData.message,
+        }),
       })
 
-      if (response.ok) {
+      const result = await response.json()
+
+      if (result.success) {
         setIsSuccess(true)
         setFormData({ name: "", phone: "", email: "", message: "" })
         setTimeout(() => setIsSuccess(false), 5000)
+      } else {
+        console.error("Form submission failed:", result)
+        alert("Failed to send message. Please try again.")
       }
     } catch (error) {
       console.error("Form submission error:", error)
+      alert("An error occurred. Please try again.")
     } finally {
       setIsSubmitting(false)
     }

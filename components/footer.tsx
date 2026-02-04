@@ -1,5 +1,6 @@
 import Link from "next/link"
-import { Building2, MapPin, Phone, Mail } from "lucide-react"
+import Image from "next/image"
+import { MapPin, Phone, Mail } from "lucide-react"
 
 const quickLinks = [
   { href: "/", label: "Home" },
@@ -24,10 +25,14 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company Info */}
           <div className="space-y-4">
-            <Link href="/" className="flex items-center gap-2">
-              <div className="p-2 bg-primary-foreground/10 rounded-lg">
-                <Building2 className="h-6 w-6 text-primary-foreground" />
-              </div>
+            <Link href="/" className="flex items-center gap-3">
+              <Image
+                src="/logo.png"
+                alt="Annamalaiyar Construction Logo"
+                width={50}
+                height={50}
+                className="rounded-full"
+              />
               <div className="flex flex-col">
                 <span className="font-bold text-lg leading-tight font-[family-name:var(--font-heading)]">
                   Annamalaiyar

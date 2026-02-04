@@ -11,47 +11,47 @@ const projects = [
     id: 1,
     title: "Modern Villa Residence",
     location: "Tirupur",
-    category: "Residential",
+    category: "Completed",
     image: "/images/projects/project-1.jpg",
   },
   {
     id: 2,
     title: "Luxury Duplex Home",
     location: "Tirupur",
-    category: "Residential",
+    category: "Completed",
     image: "/images/projects/project-2.jpg",
   },
   {
     id: 3,
     title: "Commercial Office Complex",
     location: "Tirupur",
-    category: "Commercial",
+    category: "Ongoing",
     image: "/images/projects/project-3.jpg",
   },
   {
     id: 4,
     title: "Contemporary Bungalow",
     location: "Tirupur",
-    category: "Residential",
+    category: "Completed",
     image: "/images/projects/project-4.jpg",
   },
   {
     id: 5,
     title: "Premium Apartments",
     location: "Tirupur",
-    category: "Residential",
+    category: "Ongoing",
     image: "/images/projects/project-5.jpg",
   },
   {
     id: 6,
     title: "Classic Modern Home",
     location: "Tirupur",
-    category: "Residential",
+    category: "Completed",
     image: "/images/projects/project-6.jpg",
   },
 ]
 
-const categories = ["All", "Residential", "Commercial"]
+const categories = ["All", "Completed", "Ongoing"]
 
 export function ProjectsGallery() {
   const [selectedCategory, setSelectedCategory] = useState("All")
@@ -127,7 +127,7 @@ export function ProjectsGallery() {
                   />
                   {/* Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  
+
                   {/* Content */}
                   <div className="absolute inset-0 p-6 flex flex-col justify-end opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <span className="text-xs text-white/70 uppercase tracking-wider mb-1">
@@ -209,7 +209,7 @@ export function ProjectsGallery() {
                 fill
                 className="object-contain"
               />
-              
+
               {/* Info */}
               <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
                 <span className="text-xs text-white/70 uppercase tracking-wider">

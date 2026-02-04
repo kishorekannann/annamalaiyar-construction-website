@@ -2,6 +2,7 @@ import { Metadata } from "next"
 import { HeroSlider } from "@/components/hero-slider"
 import { HomeAbout } from "@/components/home/home-about"
 import { HomeServices } from "@/components/home/home-services"
+import { HomeProjects } from "@/components/home/home-projects"
 import { HomeStats } from "@/components/home/home-stats"
 import { HomeCTA } from "@/components/home/home-cta"
 
@@ -17,6 +18,7 @@ export default function HomePage() {
       <HeroSlider />
       <HomeAbout />
       <HomeServices />
+      <HomeProjects />
       <HomeStats />
       <HomeCTA />
     </>

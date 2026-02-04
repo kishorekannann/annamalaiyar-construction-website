@@ -64,8 +64,8 @@ export function ContactSection() {
                     <h3 className="font-semibold text-foreground mb-1">
                       {item.title}
                     </h3>
-                    {item.details.map((detail) => (
-                      <p key={detail} className="text-muted-foreground text-sm">
+                    {item.details.map((detail, detailIndex) => (
+                      <p key={`${item.title}-${detailIndex}`} className="text-muted-foreground text-sm">
                         {detail}
                       </p>
                     ))}

@@ -2,9 +2,10 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { motion, AnimatePresence } from "framer-motion"
-import { Menu, X, Building2 } from "lucide-react"
+import { Menu, X, Instagram } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 
@@ -41,13 +42,14 @@ export function Navbar() {
       <nav className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
-            <div className={cn(
-              "p-2 rounded-lg transition-colors",
-              scrolled ? "bg-primary" : "bg-primary"
-            )}>
-              <Building2 className="h-6 w-6 text-primary-foreground" />
-            </div>
+          <Link href="/" className="flex items-center gap-3">
+            <Image
+              src="/logo.png"
+              alt="Annamalaiyar Construction Logo"
+              width={50}
+              height={50}
+              className="rounded-full"
+            />
             <div className="flex flex-col">
               <span className={cn(
                 "font-bold text-lg leading-tight transition-colors font-[family-name:var(--font-heading)]",
@@ -88,8 +90,20 @@ export function Navbar() {
             ))}
           </div>
 
-          {/* CTA Button */}
-          <div className="hidden md:block">
+          {/* CTA Button & Social */}
+          <div className="hidden md:flex items-center gap-4">
+            <Link
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={cn(
+                "p-2 rounded-full transition-all duration-300 hover:bg-primary/10",
+                scrolled ? "text-foreground hover:text-primary" : "text-white hover:text-white/80"
+              )}
+              aria-label="Follow us on Instagram"
+            >
+              <Instagram className="h-5 w-5" />
+            </Link>
             <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground">
               <Link href="/contact">Get a Quote</Link>
             </Button>
